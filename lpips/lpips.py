@@ -129,11 +129,11 @@ class LPIPS(nn.Module):
             spatial_average(self.lins[4](diffs[4]), keepdim=True),
         ]
 
-        val = 0
+        val = torch.zeros_like(res[0])
         for l in range(self.L):
             val += res[l]
         
-        return val
+        return val.flatten()
 
 
 class ScalingLayer(nn.Module):
