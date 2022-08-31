@@ -88,8 +88,9 @@ class alexnet(torch.nn.Module):
         h_relu4 = h
         h = self.slice5(h)
         h_relu5 = h
-        alexnet_outputs = namedtuple("AlexnetOutputs", ['relu1', 'relu2', 'relu3', 'relu4', 'relu5'])
-        out = alexnet_outputs(h_relu1, h_relu2, h_relu3, h_relu4, h_relu5)
+        #alexnet_outputs = namedtuple("AlexnetOutputs", ['relu1', 'relu2', 'relu3', 'relu4', 'relu5'])
+        #out = alexnet_outputs(h_relu1, h_relu2, h_relu3, h_relu4, h_relu5)
+        out = (h_relu1, h_relu2, h_relu3, h_relu4, h_relu5)
 
         return out
 
