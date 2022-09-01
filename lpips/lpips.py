@@ -133,7 +133,7 @@ class LPIPS(nn.Module):
         for l in range(self.L):
             val += res[l]
         
-        return val.flatten()
+        return val.sum()
 
 
 class ScalingLayer(nn.Module):

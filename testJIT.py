@@ -26,4 +26,6 @@ if(opt.use_gpu):
 # Compute distance
 with torch.no_grad():
 	dist01 = loss_fn.forward(img0, img1)
+
+print('dist01:', dist01.shape)
 print('Distance: %.3f'%dist01)
